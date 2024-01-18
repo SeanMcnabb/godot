@@ -220,6 +220,7 @@ public:
 
 	EXBIND2(shape_set_data, RID, const Variant &)
 	EXBIND2(shape_set_custom_solver_bias, RID, real_t)
+	EXBIND3(shape_update_vertex, RID, int, const Vector3 &)
 
 	EXBIND2(shape_set_margin, RID, real_t)
 	EXBIND1RC(real_t, shape_get_margin, RID)

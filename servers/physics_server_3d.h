@@ -270,6 +270,7 @@ public:
 
 	virtual void shape_set_data(RID p_shape, const Variant &p_data) = 0;
 	virtual void shape_set_custom_solver_bias(RID p_shape, real_t p_bias) = 0;
+	virtual void shape_update_vertex(RID p_shape, int index, const Vector3 &point) = 0;
 
 	virtual ShapeType shape_get_type(RID p_shape) const = 0;
 	virtual Variant shape_get_data(RID p_shape) const = 0;

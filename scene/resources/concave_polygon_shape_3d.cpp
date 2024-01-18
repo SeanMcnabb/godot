@@ -88,6 +88,11 @@ Vector<Vector3> ConcavePolygonShape3D::get_faces() const {
 	return faces;
 }
 
+void ConcavePolygonShape3D::update_vertex(int index, const Vector3 &point) {
+	faces.set(index, point);
+	PhysicsServer3D::get_singleton()->shape_update_vertex(get_shape(), index, point);
+}
+
 void ConcavePolygonShape3D::set_backface_collision_enabled(bool p_enabled) {
 	backface_collision = p_enabled;
 
@@ -104,6 +109,7 @@ bool ConcavePolygonShape3D::is_backface_collision_enabled() const {
 void ConcavePolygonShape3D::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_faces", "faces"), &ConcavePolygonShape3D::set_faces);
 	ClassDB::bind_method(D_METHOD("get_faces"), &ConcavePolygonShape3D::get_faces);
+	ClassDB::bind_method(D_METHOD("update_vertex"), &ConcavePolygonShape3D::update_vertex);
 
 	ClassDB::bind_method(D_METHOD("set_backface_collision_enabled", "enabled"), &ConcavePolygonShape3D::set_backface_collision_enabled);
 	ClassDB::bind_method(D_METHOD("is_backface_collision_enabled"), &ConcavePolygonShape3D::is_backface_collision_enabled);

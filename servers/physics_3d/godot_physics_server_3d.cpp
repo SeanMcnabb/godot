@@ -108,6 +108,13 @@ void GodotPhysicsServer3D::shape_set_data(RID p_shape, const Variant &p_data) {
 	shape->set_data(p_data);
 };
 
+void GodotPhysicsServer3D::shape_update_vertex(RID p_shape, int index, const Vector3 &point)
+{
+	GodotConcavePolygonShape3D *shape = dynamic_cast<GodotConcavePolygonShape3D *>(shape_owner.get_or_null(p_shape));
+	ERR_FAIL_NULL(shape);
+	shape->update_vertex(index, point);
+}
+
 void GodotPhysicsServer3D::shape_set_custom_solver_bias(RID p_shape, real_t p_bias) {
 	GodotShape3D *shape = shape_owner.get_or_null(p_shape);
 	ERR_FAIL_NULL(shape);

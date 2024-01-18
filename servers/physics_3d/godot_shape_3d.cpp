@@ -1684,6 +1684,10 @@ Variant GodotConcavePolygonShape3D::get_data() const {
 	return d;
 }
 
+void GodotConcavePolygonShape3D::update_vertex(int i, const Vector3 &point) {
+	vertices.set(i, point);
+}
+
 GodotConcavePolygonShape3D::GodotConcavePolygonShape3D() {
 }
 

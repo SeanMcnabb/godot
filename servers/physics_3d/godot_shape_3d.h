@@ -378,6 +378,7 @@ public:
 	virtual Vector3 get_moment_of_inertia(real_t p_mass) const override;
 
 	virtual void set_data(const Variant &p_data) override;
+	void update_vertex(int i, const Vector3 &point);
 	virtual Variant get_data() const override;
 
 	GodotConcavePolygonShape3D();

@@ -67,6 +67,7 @@ protected:
 public:
 	void set_faces(const Vector<Vector3> &p_faces);
 	Vector<Vector3> get_faces() const;
+	void update_vertex(int index, const Vector3 &vertex);
 
 	void set_backface_collision_enabled(bool p_enabled);
 	bool is_backface_collision_enabled() const;

@@ -88,6 +88,8 @@ public:
 
 	FUNC2(shape_set_data, RID, const Variant &);
 	FUNC2(shape_set_custom_solver_bias, RID, real_t);
+	FUNC3(shape_update_vertex, RID, int, const Vector3 &)
+
 
 	FUNC2(shape_set_margin, RID, real_t)
 	FUNC1RC(real_t, shape_get_margin, RID)
